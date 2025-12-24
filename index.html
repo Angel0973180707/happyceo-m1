@@ -1,0 +1,326 @@
+<div class="wrap">
+
+<!-- ================= Header ================= -->
+
+<header class="top">
+
+<div class="brand">
+
+<h1>幸福 CEO｜m1.1</h1>
+
+<p class="sub">溫暖、清爽、可長期使用｜庫存管理 × 模板 × 工具 chips × 網路工具存放庫（24小時制）</p>
+
+<div class="pillRow">
+
+<div class="pill">今天：<b id="todayText">-</b></div>
+
+<div class="pill">今日行動：<b id="actionsText">0</b></div>
+
+</div>
+
+</div>
+
+<div class="actions">
+
+<button type="button" id="btnAddAction">+ 記一個今日行動</button>
+
+<button type="button" class="ghost" id="btnResetToday">重設今日行動數</button>
+
+</div>
+
+</header>
+
+<div class="grid">
+
+<!-- ================= Left ================= -->
+
+<section class="card">
+
+<h2>今日照顧</h2>
+
+<div class="quote" id="promptBox">（每日一句）</div>
+
+<ul class="checklist" id="todayActions"></ul>
+
+<div class="soft" id="dontBox"></div>
+
+<div style="margin-top:12px;border-top:1px dashed var(--line);padding-top:12px;">
+
+<h2 style="margin-top:0;">工具 chips（臨時工具包）</h2>
+
+<div class="toolAdder">
+
+<input id="toolName" placeholder="工具名稱（例：Canva 模板）" />
+
+<input id="toolUrl" placeholder="工具連結（可空）" />
+
+<button type="button" id="btnToolAdd">加入</button>
+
+</div>
+
+<div class="toolChips" id="toolChips"></div>
+
+<div class="soft">提示：這裡的工具會跟著「庫存新增」一起入帳到該筆庫存。</div>
+
+</div>
+
+<div class="tplPanel" style="margin-top:14px;">
+
+<h2>模板（快選 + 套用複製）</h2>
+
+<div class="row2">
+
+<select id="tplQuickSelect"></select>
+
+<button type="button" class="ghost" id="btnTplManage">管理模板</button>
+
+<button type="button" id="btnTplApply">套用模板→複製</button>
+
+</div>
+
+<!-- 管理面板 -->
+
+<div id="tplPanel" style="display:none;margin-top:10px;">
+
+<div class="card" style="padding:12px;border-radius:14px;">
+
+<div class="row2">
+
+<button type="button" class="ghost" id="btnTplClose">關閉</button>
+
+<button type="button" class="ghost" id="btnTplClear">清空輸入</button>
+
+<button type="button" id="btnTplSave">儲存新模板</button>
+
+</div>
+
+<div class="tplAdd" style="margin-top:8px;">
+
+<input id="tplName" placeholder="模板名稱（例：YT-溫暖版）" />
+
+<textarea id="tplBody" placeholder="模板內容（支援 {{title}} {{date}} {{time}} {{series}} {{link}} {{intro}} {{tools}}）"></textarea>
+
+</div>
+
+<div id="tplList"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= Right ================= -->
+
+<section class="card">
+
+<h2>庫存新增（24 小時制）</h2>
+
+<div class="invAdd">
+
+<div class="row2">
+
+<select id="invType">
+
+<option value="video">影片</option>
+
+<option value="post">貼文</option>
+
+</select>
+
+<select id="invPlatform">
+
+<option>YouTube</option>
+
+<option>FB</option>
+
+<option>IG</option>
+
+<option>LINE</option>
+
+<option>Threads</option>
+
+<option>其他</option>
+
+</select>
+
+</div>
+
+<input id="invTitle" placeholder="預計發布內容名稱（必填）" />
+
+<input id="invLink" placeholder="主連結（可空，但建議填）" />
+
+<div class="row2">
+
+<input id="invDate" type="date" />
+
+<input id="invTime" placeholder="時間（24小時制，如 16:00 / 700 / 7:05）" />
+
+</div>
+
+<select id="invSeries">
+
+<option>幸福教養</option>
+
+<option>詩詞人生</option>
+
+<option>心理學</option>
+
+<option>腦神經科學</option>
+
+<option>心靈成長</option>
+
+<option>其他</option>
+
+</select>
+
+<textarea id="invIntro" placeholder="介紹（可空）"></textarea>
+
+<button type="button" id="btnInvAdd">＋ 新增到庫存</button>
+
+</div>
+
+<hr style="border:none;border-top:1px dashed var(--line);margin:12px 0;" />
+
+<h2>庫存篩選</h2>
+
+<div class="invFilters">
+
+<select id="invView">
+
+<option value="all">全部</option>
+
+<option value="today">今天</option>
+
+<option value="week">近 7 天</option>
+
+<option value="range">自訂區間</option>
+
+</select>
+
+<select id="invStatus">
+
+<option value="all">狀態：全部</option>
+
+<option value="todo">待發</option>
+
+<option value="done">已發</option>
+
+<option value="delay">延後</option>
+
+</select>
+
+<select id="invKind">
+
+<option value="all">類型：全部</option>
+
+<option value="video">影片</option>
+
+<option value="post">貼文</option>
+
+</select>
+
+<select id="invSeriesFilter">
+
+<option value="all">系列：全部</option>
+
+<option value="幸福教養">幸福教養</option>
+
+<option value="詩詞人生">詩詞人生</option>
+
+<option value="心理學">心理學</option>
+
+<option value="腦神經科學">腦神經科學</option>
+
+<option value="心靈成長">心靈成長</option>
+
+<option value="其他">其他</option>
+
+</select>
+
+<button type="button" class="ghost" id="btnOnlyTodo">只看待發</button>
+
+<button type="button" class="ghost" id="btnShowAll">重置篩選</button>
+
+</div>
+
+<div class="rangeBox" id="rangeBox" style="display:none;">
+
+<span class="soft">從</span>
+
+<input id="invFrom" type="date" />
+
+<span class="soft">到</span>
+
+<input id="invTo" type="date" />
+
+</div>
+
+<div id="invList" style="margin-top:12px;"></div>
+
+<div class="toolCard card" style="margin-top:14px;">
+
+<h2>網路工具存放庫</h2>
+
+<div class="toolAdd">
+
+<select id="wtKind">
+
+<option>素材</option>
+
+<option>工具</option>
+
+<option>靈感</option>
+
+<option>教學</option>
+
+<option>其他</option>
+
+</select>
+
+<input id="wtTitle" placeholder="名稱（必填）" />
+
+<input id="wtUrl" placeholder="URL（必填）" />
+
+<input id="wtTags" placeholder="標籤（可用空白/逗號/#，例：#影片 #剪輯）" />
+
+<textarea id="wtNote" placeholder="備註（可空）"></textarea>
+
+<button type="button" id="btnWtAdd">＋ 加入工具</button>
+
+</div>
+
+<div id="wtList" style="margin-top:12px;"></div>
+
+</div>
+
+</section>
+
+</div>
+
+</div>
+
+<!-- ===== Copy Modal（手機備援複製）===== -->
+
+<div id="copyModal" class="copyModal" style="display:none;">
+
+<div class="copyCard">
+
+<div style="font-weight:bold;">複製備援</div>
+
+<div class="soft">你的手機可能不允許自動複製，請手動全選複製。</div>
+
+<textarea id="copyBox"></textarea>
+
+<div class="copyBtns">
+
+<button type="button" class="ghost" id="btnCloseCopy">關閉</button>
+
+</div>
+
+</div>
+
+</div>
+
