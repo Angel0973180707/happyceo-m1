@@ -1,0 +1,460 @@
+/* ===============================
+
+幸福 CEO｜m1.1 完整 CSS
+
+風格：溫暖、清爽、可長期使用
+
+=============================== */
+
+:root {
+
+--bg: #fff7ef;
+
+--card: #ffffff;
+
+--main: #f0a04b;
+
+--main-soft: #fff0dc;
+
+--text: #333;
+
+--sub: #666;
+
+--line: #e6e0d8;
+
+--danger: #d9534f;
+
+}
+
+* { box-sizing: border-box; }
+
+body {
+
+margin: 0;
+
+font-family: system-ui, -apple-system, BlinkMacSystemFont,
+
+"Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+
+background: var(--bg);
+
+color: var(--text);
+
+line-height: 1.6;
+
+}
+
+.wrap {
+
+max-width: 1200px;
+
+margin: 0 auto;
+
+padding: 14px;
+
+}
+
+/* ================= Header ================= */
+
+.top {
+
+display: flex;
+
+justify-content: space-between;
+
+align-items: flex-start;
+
+gap: 12px;
+
+margin-bottom: 14px;
+
+}
+
+.brand h1 { margin: 0; font-size: 1.8rem; }
+
+.brand .sub {
+
+margin: 6px 0 0;
+
+font-size: 0.9rem;
+
+color: var(--sub);
+
+}
+
+.pillRow { display: flex; gap: 8px; margin-top: 8px; }
+
+.pill {
+
+background: var(--main-soft);
+
+padding: 6px 10px;
+
+border-radius: 999px;
+
+font-size: 0.85rem;
+
+}
+
+.actions button { display: block; width: 100%; margin-bottom: 6px; }
+
+/* ================= Layout ================= */
+
+.grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 14px; }
+
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+
+/* ================= Card ================= */
+
+.card {
+
+background: var(--card);
+
+border-radius: 16px;
+
+padding: 14px;
+
+border: 1px solid var(--line);
+
+}
+
+.card h2 { margin: 0 0 8px; font-size: 1.1rem; }
+
+/* ================= Text ================= */
+
+.quote {
+
+background: var(--main-soft);
+
+padding: 12px;
+
+border-radius: 12px;
+
+margin-bottom: 12px;
+
+font-size: 0.95rem;
+
+}
+
+.soft { color: var(--sub); font-size: 0.85rem; }
+
+/* ================= Checklist ================= */
+
+.checklist { padding-left: 18px; margin: 6px 0 12px; }
+
+.checklist li { margin-bottom: 6px; }
+
+/* ================= Buttons ================= */
+
+button {
+
+border: none;
+
+border-radius: 10px;
+
+padding: 8px 12px;
+
+background: var(--main);
+
+color: #fff;
+
+cursor: pointer;
+
+font-size: 0.9rem;
+
+}
+
+button.ghost {
+
+background: transparent;
+
+color: var(--text);
+
+border: 1px solid var(--line);
+
+}
+
+button.primary { background: var(--main); }
+
+button:hover { opacity: 0.9; }
+
+.chipBtn {
+
+background: var(--main-soft);
+
+color: var(--text);
+
+border-radius: 999px;
+
+font-size: 0.8rem;
+
+}
+
+.chipBtn.ghost { background: transparent; border: 1px solid var(--line); }
+
+/* ================= Inventory ================= */
+
+.invAdd input,
+
+.invAdd select,
+
+.invAdd textarea {
+
+width: 100%;
+
+margin-bottom: 6px;
+
+padding: 8px;
+
+border-radius: 8px;
+
+border: 1px solid var(--line);
+
+font-size: 0.9rem;
+
+}
+
+.invAdd textarea { min-height: 60px; }
+
+.row2 { display: flex; gap: 6px; }
+
+.row2 input, .row2 select, .row2 button { flex: 1; }
+
+.invFilters {
+
+display: flex;
+
+flex-wrap: wrap;
+
+gap: 6px;
+
+margin: 10px 0;
+
+}
+
+.invFilters select {
+
+padding: 6px;
+
+border-radius: 8px;
+
+border: 1px solid var(--line);
+
+}
+
+.rangeBox { display: flex; align-items: center; gap: 6px; }
+
+/* ================= Inventory Cards ================= */
+
+.invCard {
+
+border: 1px solid var(--line);
+
+border-radius: 14px;
+
+padding: 10px;
+
+margin-bottom: 10px;
+
+}
+
+.invTitle { font-weight: bold; margin: 6px 0; }
+
+.invRow { font-size: 0.85rem; margin-bottom: 4px; }
+
+.invIntro { margin: 6px 0; font-size: 0.9rem; }
+
+.invLinks { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+
+.invBtn { background: var(--main-soft); color: var(--text); font-size: 0.8rem; }
+
+.invBtn.primary { background: var(--main); color: #fff; }
+
+.invLink { color: var(--main); text-decoration: none; font-size: 0.85rem; }
+
+/* ================= Badges ================= */
+
+.badge {
+
+display: inline-block;
+
+padding: 2px 8px;
+
+border-radius: 999px;
+
+background: var(--main-soft);
+
+font-size: 0.7rem;
+
+margin-right: 4px;
+
+}
+
+/* ================= Tools chips ================= */
+
+.toolAdder { display: flex; gap: 6px; }
+
+.toolAdder input { flex: 1; }
+
+.toolChips { margin: 6px 0; }
+
+.toolChip {
+
+display: inline-flex;
+
+align-items: center;
+
+gap: 6px;
+
+background: var(--main-soft);
+
+padding: 4px 8px;
+
+border-radius: 999px;
+
+font-size: 0.8rem;
+
+margin: 2px;
+
+}
+
+.toolChip button {
+
+border-radius: 999px;
+
+padding: 2px 8px;
+
+font-size: 0.8rem;
+
+}
+
+/* ================= Templates ================= */
+
+.tplPanel { margin-top: 10px; border-top: 1px dashed var(--line); padding-top: 10px; }
+
+.tplAdd input,
+
+.tplAdd textarea {
+
+width: 100%;
+
+margin-bottom: 6px;
+
+padding: 8px;
+
+border-radius: 8px;
+
+border: 1px solid var(--line);
+
+}
+
+.tplItem {
+
+border: 1px solid var(--line);
+
+border-radius: 10px;
+
+padding: 8px;
+
+margin-bottom: 8px;
+
+}
+
+.tplItem pre {
+
+white-space: pre-wrap;
+
+font-size: 0.8rem;
+
+background: #fafafa;
+
+padding: 6px;
+
+border-radius: 8px;
+
+}
+
+/* ================= Web Tools ================= */
+
+.toolCard { margin-top: 14px; }
+
+.toolAdd input,
+
+.toolAdd select,
+
+.toolAdd textarea {
+
+width: 100%;
+
+margin-bottom: 6px;
+
+padding: 8px;
+
+border-radius: 8px;
+
+border: 1px solid var(--line);
+
+}
+
+.webToolItem {
+
+border: 1px solid var(--line);
+
+border-radius: 12px;
+
+padding: 10px;
+
+margin-bottom: 8px;
+
+}
+
+.webToolTitle { font-weight: bold; }
+
+.webToolActions { display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; }
+
+/* ================= Copy Modal ================= */
+
+.copyModal {
+
+position: fixed;
+
+inset: 0;
+
+background: rgba(0,0,0,0.4);
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+z-index: 999;
+
+}
+
+.copyCard {
+
+background: #fff;
+
+border-radius: 14px;
+
+padding: 14px;
+
+width: 90%;
+
+max-width: 420px;
+
+}
+
+.copyCard textarea {
+
+width: 100%;
+
+min-height: 120px;
+
+margin: 8px 0;
+
+}
+
+.copyBtns { text-align: right; }
+
