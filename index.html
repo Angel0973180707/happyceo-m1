@@ -1,21 +1,6 @@
 <div class="wrap">
 
 <!-- ================= Header ================= -->
-  <!-- ===== PWA Service Worker 註冊（離線快取）===== -->
-<script>
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", function () {
-      navigator.serviceWorker
-        .register("./sw.js")
-        .then(function () {
-          console.log("✅ PWA 離線快取註冊完成");
-        })
-        .catch(function (err) {
-          console.log("❌ PWA 註冊失敗", err);
-        });
-    });
-  }
-</script>
 
 <header class="top">
 
@@ -23,7 +8,7 @@
 
 <h1>幸福 CEO｜m1.1</h1>
 
-<p class="sub">庫存管理 × 模板 × 工具 chips × 網路工具存放庫（24小時制）</p>
+<p class="sub">溫暖、清爽、可長期使用｜庫存管理 × 模板 × 工具 chips × 網路工具存放庫（24小時制）</p>
 
 <div class="pillRow">
 
@@ -338,4 +323,5 @@
 </div>
 
 </div>
+
 
